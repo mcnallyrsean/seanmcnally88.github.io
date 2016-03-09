@@ -14,7 +14,7 @@ So, you're just starting in Rails and you've created a form. Awesome! You're CRU
 
 So let's work off the US states example. Say you want a user to be able select the state of their address in a dropdown. The first step will be to create a file in the helpers folder of your rails project. 
 
-#####Step 1:
+##### Step 1:
 Navigate to *yourapp*/app/helpers and create a file called states_helper.rb which will create a file that looks like this:
 
 {% highlight ruby %}
@@ -22,7 +22,7 @@ module StatesHelper
 end
 {% endhighlight %}
 
-#####Step 2:
+##### Step 2:
 Now that we've created the States Helper, we can actually add some code in between the module.
 
 Let's create a method called us_states like so.
@@ -99,7 +99,7 @@ end
 
 So now we have an array of arrays that contain the full state name, and the postal abbreviation for each state. The full state name (or whatever you put in array[0]) will be what appears in the form dropdown, and the postal abbreviation (or whatever you put in array[1]) will be what posts to the database.
 
-#####Step 3:
+##### Step 3:
 We're done with the helper! Now we can add it to your Rails form.
 
 Here is how to implement the helper (with "IL" being the default choice) in a form_for:
@@ -114,7 +114,7 @@ Here is how to implement the helper (with "IL" being the default choice) in a fo
 <%= f.select :state, options_for_select(us_states, @your_user.state ) %>
 {% endhighlight %}
 
-#####Step 4:
+##### Step 4:
 Celebrate a job well done.
 
 
